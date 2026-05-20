@@ -1,0 +1,108 @@
+/* Notepad Application Stylesheet */
+
+/* Root styling */
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-font-size: 11;
+    -fx-text-fill: #333333;
+}
+
+/* Text Area styling */
+.text-area {
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-font-size: 12;
+    -fx-padding: 5;
+    -fx-text-fill: #000000;
+    -fx-control-inner-background: #ffffff;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-font-smoothing-type: gray;
+}
+
+.text-area:focused {
+    -fx-control-inner-background: #ffffff;
+}
+
+.text-area .content {
+    -fx-padding: 5;
+}
+
+/* Menu Bar */
+.menu-bar {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #ddd;
+    -fx-border-width: 0 0 1 0;
+}
+
+.menu {
+    -fx-padding: 5;
+}
+
+.menu:hover {
+    -fx-background-color: #e0e0e0;
+}
+
+.menu-item {
+    -fx-padding: 5 10;
+}
+
+.menu-item:hover {
+    -fx-background-color: #0078d4;
+    -fx-text-fill: white;
+}
+
+/* Status Bar */
+.status-bar {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #ddd;
+    -fx-border-width: 1 0 0 0;
+}
+
+.status-bar .label {
+    -fx-text-fill: #666666;
+    -fx-font-size: 10;
+}
+
+/* Info Bar */
+.info-bar {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #ddd;
+    -fx-border-width: 0 0 1 0;
+}
+
+.info-bar .label {
+    -fx-text-fill: #333333;
+}
+
+/* Scroll Bar */
+.scroll-bar {
+    -fx-font-size: 10;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #c0c0c0;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #a0a0a0;
+}
+
+/* Dialog styling */
+.dialog-pane {
+    -fx-padding: 15;
+}
+
+.button {
+    -fx-padding: 8 15;
+    -fx-font-size: 11;
+}
+
+.button:default {
+    -fx-focus-color: #0078d4;
+}
+
+/* Alert styling */
+.alert .header-panel .header-text {
+    -fx-text-fill: #333333;
+}

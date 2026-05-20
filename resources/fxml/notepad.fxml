@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.notepad.controller.NotepadController"
+            stylesheets="@../css/styles.css">
+
+    <!-- Menu Bar -->
+    <top>
+        <VBox spacing="0">
+            <MenuBar>
+                <!-- File Menu -->
+                <Menu text="File">
+                    <MenuItem text="New" onAction="#newFile" />
+                    <MenuItem text="Open" onAction="#openFile" />
+                    <MenuItem text="Save" onAction="#saveFile" />
+                    <MenuItem text="Save As..." onAction="#saveAsFile" />
+                    <SeparatorMenuItem />
+                    <MenuItem text="Exit" onAction="#exitApplication" />
+                </Menu>
+
+                <!-- Edit Menu -->
+                <Menu text="Edit">
+                    <MenuItem text="Select All" onAction="#selectAll" />
+                </Menu>
+
+                <!-- Format Menu -->
+                <Menu text="Format">
+                    <MenuItem text="Word Wrap" onAction="#toggleWordWrap" />
+                </Menu>
+
+                <!-- Help Menu -->
+                <Menu text="Help">
+                    <MenuItem text="About" onAction="#showAbout" />
+                </Menu>
+            </MenuBar>
+
+            <!-- File Info Bar -->
+            <HBox styleClass="info-bar" spacing="10" style="-fx-padding: 5px; -fx-background-color: #f5f5f5; -fx-border-color: #ddd; -fx-border-width: 0 0 1 0;">
+                <Label text="File: " />
+                <Label fx:id="fileNameLabel" text="Untitled" style="-fx-font-weight: bold;" />
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Text Editor Area -->
+    <center>
+        <TextArea fx:id="textArea"
+                  styleClass="text-area"
+                  wrapText="false"
+                  style="-fx-padding: 0; -fx-font-family: 'Consolas', 'Courier New', monospace; -fx-font-size: 12;" />
+    </center>
+
+    <!-- Status Bar -->
+    <bottom>
+        <HBox styleClass="status-bar" style="-fx-padding: 5px; -fx-background-color: #f5f5f5; -fx-border-color: #ddd; -fx-border-width: 1 0 0 0;">
+            <Label fx:id="statusLabel" text="Ready" HBox.hgrow="ALWAYS" />
+        </HBox>
+    </bottom>
+</BorderPane>
