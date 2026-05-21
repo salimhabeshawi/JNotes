@@ -30,7 +30,7 @@ jnotes/
 │   │   └── Document.java                # Document state model (Model)
 │   └── util/
 │       └── FileService.java             # File utility service
-└── out/classes/                          # Compiled bytecode
+└── src/com/notepad/*.class               # Compiled bytecode when using direct javac
 ```
 
 ## Design Patterns & Best Practices
@@ -113,37 +113,29 @@ JFrame (NotepadFrame)
 - No external dependencies
 - Industry standard choice
 
-## Building the Application
+## Building and Running the Application
 
 ### Prerequisites
 - Java Development Kit (JDK) 8 or higher
 - Linux, macOS, or Windows
 
-### Build Process
+### Compile
 
-**Using build script (Recommended):**
 ```bash
-./build.sh          # Unix/Linux/macOS
-build.bat           # Windows
+javac -sourcepath src src/com/notepad/NotepadApplication.java
 ```
 
-**Manual build:**
+### Run
+
 ```bash
-mkdir -p out/classes
-javac -d out/classes -sourcepath src src/com/notepad/NotepadApplication.java
+java -cp src com.notepad.NotepadApplication
 ```
 
-## Running the Application
+### Windows Command Prompt
 
-**Using run script (Recommended):**
-```bash
-./run.sh            # Unix/Linux/macOS
-run.bat             # Windows
-```
-
-**Manual execution:**
-```bash
-java -cp out/classes com.notepad.NotepadApplication
+```bat
+javac src\com\notepad\NotepadApplication.java
+java -cp src com.notepad.NotepadApplication
 ```
 
 ## Keyboard Shortcuts
@@ -308,16 +300,16 @@ SwingUtilities.invokeLater(() -> {
 java -version
 
 # Verify compilation
-ls out/classes/com/notepad/*.class
+ls src/com/notepad/*.class
 ```
 
 ### GUI Not Appearing
-- Check if running headless system (SSH without display)
+- Check if running in a headless system (SSH session with no display)
 - Verify DISPLAY environment variable on Linux
 - Try setting look and feel explicitly
 
 ### Text Not Displaying
-- Verify font availability: `java -cp out/classes com.notepad.NotepadApplication`
+- Verify font availability: `java -cp src com.notepad.NotepadApplication`
 - Check JTextArea properties in `EditorPanel.java`
 
 ## Swing vs JavaFX
